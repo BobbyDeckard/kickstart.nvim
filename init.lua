@@ -259,6 +259,22 @@ require('lazy').setup({
       },
     },
   },
+  -- 42 Header plugin
+  {
+    'Diogo-ss/42-header.nvim',
+    cmd = { 'Stdheader' },
+    keys = { '<F1>' },
+    opts = {
+      default_map = true, -- Default mapping <F1> in normal mode.
+      auto_update = true, -- Update header when saving.
+      user = 'imeulema', -- Your user.
+      mail = 'imeulema@student.42lausanne.ch', -- Your mail.
+      -- add other options.
+    },
+    config = function(_, opts)
+      require('42header').setup(opts)
+    end,
+  },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
