@@ -911,20 +911,27 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
+    'sainnhe/gruvbox-material',
+    lazy = false,
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
-        },
-      }
-
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'retrobox'
+      if vim.fn.has 'termguicolors' == 1 then
+        vim.opt.termguicolors = true
+      end
+      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_enable_bold = true
+      vim.g.gruvbox_material_transparent_background = 0
+      vim.g.gruvbox_material_dim_inactive_windows = true
+      vim.g.gruvbox_material_background = 'hard'
+      vim.g.gruvbox_material_foreground = 'material'
+      vim.g.gruvbox_material_visual = 'green background'
+      vim.g.gruvbox_material_ui_contrast = 'low'
+      vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
+      vim.g.gruvbox_material_statusline_style = 'default'
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
 
