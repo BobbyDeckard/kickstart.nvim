@@ -926,7 +926,7 @@ require('lazy').setup({
       vim.g.gruvbox_material_transparent_background = 0
       vim.g.gruvbox_material_dim_inactive_windows = true
       vim.g.gruvbox_material_background = 'hard'
-      vim.g.gruvbox_material_foreground = 'material'
+      vim.g.gruvbox_material_foreground = 'mix'
       vim.g.gruvbox_material_visual = 'green background'
       vim.g.gruvbox_material_ui_contrast = 'low'
       vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
